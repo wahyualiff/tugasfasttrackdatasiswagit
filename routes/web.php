@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Blade - Controller
+Route::get('/beranda', [MenuController::class, 'home']);
+Route::get('/siswa', [MenuController::class, 'data_siswa']);
+Route::get('/guru', [MenuController::class, 'data_guru']);
+
+Auth::routes();
