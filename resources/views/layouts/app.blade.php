@@ -37,7 +37,7 @@
                             <a class="nav-link" href="/siswa">Data Siswa <span class="sr-only"></span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="/dataguru">Data Guru <span class="sr-only"></span></a>
+                            <a class="nav-link" href="/guru">Data Guru <span class="sr-only"></span></a>
                         </li>
                     </ul>
 
