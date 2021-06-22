@@ -26,7 +26,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        // Tambah data USER
+        return view('tambah');
     }
 
     /**
@@ -37,7 +38,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Proses tambah data USER
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+            'login_role' => $request->login_role,
+        ]);
+        return redirect()->route('users.index');
     }
 
     /**
@@ -48,7 +56,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        // Detail USER
+        $users = User::where('id', $id)->first();
+        return view('detail', ['users' => $users]);
     }
 
     /**

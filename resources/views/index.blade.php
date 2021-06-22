@@ -12,6 +12,7 @@
                     <tr>
                         <th>Nama</th>
                         <th>Email</th>
+                        {{--  <th>Password</th>  --}}
                         <th>Akses</th>
                         <th>Tindakan</th>
                     </tr>
@@ -19,6 +20,7 @@
                     <tr>
                         <td>{{$us->name}}</td>
                         <td>{{$us->email}}</td>
+                        {{--  <td>{{$us->password}}</td>  --}}
                         <td>{{$us->login_role}}</td>
                         <td>
                             <ul class="nav">
