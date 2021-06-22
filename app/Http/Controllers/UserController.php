@@ -102,6 +102,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // proses hapus data USER
+        $users = User::find($id);
+        $users->delete();
+
+        return redirect()->route('users.index');
     }
 }

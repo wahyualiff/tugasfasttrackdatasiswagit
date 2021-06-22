@@ -4,10 +4,9 @@
 <div class="container d-flex justify-content-center">
     <div class="card w-50">
         <div class="card-header">
-            <h3>Profil Siswa</h3>
+            <h3>Detail User SMKN 1</h3>
         </div>
         <div class="card-body">
-            <a href="{{route('users.index')}}">Kembali</a>
             {{--  <div class="row ml-2">
                 <h4 class="col-4">NIS</h4>
                 <h4>: {{$siswa->nis}} </h4>
@@ -24,6 +23,7 @@
                 <h4 class="col-4">Hak Akses</h4>
                 <h4>: {{$users->login_role}} </h4>
             </div>
+            <a href="{{route('users.index')}}" class="btn btn-primary">Kembali</a>
         </div>
     </div>
 </div>

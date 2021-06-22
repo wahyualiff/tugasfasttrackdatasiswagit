@@ -33,12 +33,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
+                        {{--  <li class="nav-item active">
                             <a class="nav-link" href="#">Data Siswa <span class="sr-only"></span></a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="/guru">Data Guru <span class="sr-only"></span></a>
-                        </li>
+                        </li>  --}}
                     </ul>
 
                     <!-- Right Side Of Navbar -->
