@@ -13,7 +13,13 @@
                     Nama <input type="text" name="name" required>
                     Email <input type="email" name="email" required>
                     Password <input type="password" name="password" required>
-                    Akses <input type="text" name="login_role" required>
+                    <div class="form-group">
+                        <label>Hak Akses</label>
+                        <select name="login_role" class="form-control">
+                            <option value="Siswa">Siswa</option>
+                            <option value="Guru">Guru</option>
+                        </select>
+                    </div>
                 </ul>
                 <hr>
                 <a href="{{route('users.index')}}" class="btn btn-primary">Kembali</a>
