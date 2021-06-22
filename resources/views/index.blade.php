@@ -6,28 +6,28 @@
 <div class="container" style="min-height: 500px">
     <div class="card my-3">
         <div class="card-body">
-            <h1>Data Siswa SMKN 1</h1>
-            <a href="{{route("siswa.create")}}">[+] Tambah Data Siswa</a>
-                <table class="table table-bordered table-striped">
+            <h1>Data User SMKN 1</h1>
+            <a href="{{route("users.create")}}">[+] Tambah Data User</a>
+                <table class="table table-bordered table-striped m-1">
                     <tr>
-                        <th>NIS</th>
                         <th>Nama</th>
-                        <th>Tempat, Tanggal Lahir</th>
-                        <th>Aksi</th>
+                        <th>Email</th>
+                        <th>Akses</th>
+                        <th>Tindakan</th>
                     </tr>
-                    @foreach ($siswa as $s)
+                    @foreach ($users as $us)
                     <tr>
-                        <td>{{$s->nis}}</td>
-                        <td>{{$s->nama}}</td>
-                        <td>{{$s->tgl_lahir}}</td>
+                        <td>{{$us->name}}</td>
+                        <td>{{$us->email}}</td>
+                        <td>{{$us->login_role}}</td>
                         <td>
                             <ul class="nav">
-                            <a href="{{route('siswa.show', $s->id)}}" class="btn btn-primary">Detail</a>
-                            <a href="{{route('siswa.edit', $s->id)}}" class="btn btn-warning">Edit</a>
-                            <form action="{{route('siswa.destroy', $s->id)}}" method="POST">
+                            <a href="{{route('users.show', $us->id)}}" class="btn btn-primary m-1">Detail</a>
+                            <a href="{{route('users.edit', $us->id)}}" class="btn btn-warning m-1">Edit</a>
+                            <form action="{{route('users.destroy', $us->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                <button type="submit" class="btn btn-danger m-1">Hapus</button>
                             </form>
                             </ul>
                         </td>

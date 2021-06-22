@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
-use App\Http\Controllers\SekolahController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,6 @@ Route::get('/siswa', [MenuController::class, 'data_siswa']);
 Route::get('/guru', [MenuController::class, 'data_guru']);
 
 // Route CRUD
-Route::resource('sekolah', (SekolahController::class));
+Route::resource('users', (UserController::class));
 Route::resource('siswa', (SiswaController::class));
 Auth::routes();

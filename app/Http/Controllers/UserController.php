@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
-class SekolahController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,9 @@ class SekolahController extends Controller
      */
     public function index()
     {
-        // dashboard
-        return view('beranda');
+        // Halaman utama
+        $datausers = User::all();
+        return view('index', ['users' => $datausers]);
     }
 
     /**
@@ -24,8 +26,7 @@ class SekolahController extends Controller
      */
     public function create()
     {
-        // tambah data
-        return view('tambah');
+        //
     }
 
     /**
