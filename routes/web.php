@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 // Blade - Controller
-Route::get('/beranda', [MenuController::class, 'home']);
+Route::get('/beranda', [MenuController::class, 'home'])->name('beranda');
 Route::get('/siswa', [MenuController::class, 'data_siswa']);
 Route::get('/guru', [MenuController::class, 'data_guru']);
 
