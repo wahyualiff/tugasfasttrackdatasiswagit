@@ -24,8 +24,12 @@
                         <td>{{$us->login_role}}</td>
                         <td>
                             <ul class="nav">
-                            <a href="{{route('users.show', $us->id)}}" class="btn btn-primary m-1">Detail</a>
+                            @role('siswa')
+                            <a href="{{route('users.show', $us->id)}}" class="btn btn-primary m-1">Lihat</a>
+                            @endrole
+                            @role('guru')
                             <a href="{{route('users.edit', $us->id)}}" class="btn btn-warning m-1">Edit</a>
+                            @endrole
                             <form action="{{route('users.destroy', $us->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')

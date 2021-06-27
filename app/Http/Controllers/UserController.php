@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -14,9 +15,16 @@ class UserController extends Controller
      */
     public function index()
     {
-        // Halaman utama
-        $datausers = User::all();
-        return view('index', ['users' => $datausers]);
+        // data siswa
+        $user = Auth::user();
+        if ($user->hasRole('guru')) {
+            // dapat mengakses data siswa
+            $datausers = User::all();
+            return view('index', ['users' => $datausers]);
+        } else {
+            // dialihkan ke halaman beranda
+            return redirect()->route('beranda');
+        }
     }
 
     /**

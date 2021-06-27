@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Siswa;
+use Illuminate\Support\Facades\Auth;
 
 class SiswaController extends Controller
 {
@@ -15,8 +16,15 @@ class SiswaController extends Controller
     public function index()
     {
         // data siswa
-        $datasiswa = Siswa::all();
-        return view('index', ['siswa' => $datasiswa]);
+        $user = Auth::user();
+        if ($user->hasRole('guru')) {
+            // dapat mengakses data siswa
+            $datasiswa = Siswa::all();
+            return view('index', ['siswa' => $datasiswa]);
+        } else {
+            // dialihkan ke halaman beranda
+            return redirect()->route('beranda');
+        }
     }
 
     /**
